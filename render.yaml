@@ -1,0 +1,40 @@
+databases:
+  - name: kasolution-db
+    databaseName: kasolution_api_db
+    user: kasolution_admin
+    plan: free
+
+services:
+  - type: web
+    name: kasolution-api
+    env: java
+    plan: free
+
+    # Assumindo que você usa Maven. Se for Gradle, mude para ./gradlew build -x test
+    buildCommand: "./mvnw clean package -DskipTests"
+    startCommand: "java -jar target/*.jar"
+
+    envVars:
+      # 1. Banco de Dados (Mapeado exatamente como no seu .env)
+      - key: DB_URL
+        fromDatabase:
+          name: kasolution-db
+          property: connectionString
+
+      - key: DB_USERNAME
+        fromDatabase:
+          name: kasolution-db
+          property: user
+
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: kasolution-db
+          property: password
+
+      # 2. JWT (O Render vai gerar uma chave forte e aleatória automaticamente para produção!)
+      - key: APP_JWT_SECRET
+        generateValue: true
+
+      # 3. URL Pública (Descomente e ajuste quando souber o nome final do seu app no Render)
+      # - key: APP_PUBLIC_BASE_URL
+      #   value: https://kasolution-api.onrender.com

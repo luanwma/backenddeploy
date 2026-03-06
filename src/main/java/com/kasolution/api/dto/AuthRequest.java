@@ -10,5 +10,6 @@ import lombok.Data;
 public record AuthRequest(
         @Email @NotBlank(message = "O email é obrigatório") String email ,
         @NotBlank(message = "A senha é obrigatória") String senha) {
+
 }
 

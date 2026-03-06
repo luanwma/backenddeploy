@@ -17,7 +17,8 @@ public record TarefaRequest(
 
        @NotBlank(message = "A descricao é obrigatório") String descricao,
 
-       @NotNull(message = "O status da tarefa é obrigatório")TarefaStatus tarefaStatus,
+      // @NotNull(message = "O status da tarefa é obrigatório")TarefaStatus tarefaStatus,
+        TarefaStatus tarefaStatus ,
 
        @NotNull(message = "O prazo final é obrigatório")Instant prazoFinal ,
 
@@ -30,6 +31,16 @@ public record TarefaRequest(
        Set<String> etiquetas
 
 ) {
+
+    public TarefaRequest{
+
+        tarefaStatus = TarefaStatus.TODO;
+
+        if (etiquetas == null) {
+            etiquetas = java.util.Collections.emptySet();
+        }
+    }
+
 }
 
 

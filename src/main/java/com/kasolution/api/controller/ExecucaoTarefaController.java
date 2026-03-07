@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 import java.util.UUID;
 
 @RestController
@@ -56,19 +56,6 @@ public class ExecucaoTarefaController {
         tarefaService.pausarTarefa(tarefaId, executor,request.detalhesExecucao());
         return ResponseEntity.noContent().build();
     }
-
-   /* @PostMapping("/{tarefaId}/enviarReview")
-    public ResponseEntity<Void> enviarTarefaReview(
-            @PathVariable UUID tarefaId,
-            @AuthenticationPrincipal UsuarioAutenticado executor,
-            @RequestBody String detalhesExecucao) {
-        Tarefa t = tarefaService.buscarTarefaAtiva(tarefaId);
-        if(t.getTarefaStatus() != TarefaStatus.DOING && t.getTarefaStatus() != TarefaStatus.PAUSED){
-            throw new TarefaStatusException("A tarefa não esta disponivel");
-        }
-        usuarioTarefaService.enviarTarefaReview(tarefaId, executor, detalhesExecucao);
-        return ResponseEntity.noContent().build();
-    }*/
 
 
 

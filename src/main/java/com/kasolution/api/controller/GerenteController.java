@@ -53,18 +53,5 @@ public class GerenteController {
     }
 
 
-   /*
-
-   @PostMapping("/tarefas/criar")
-    public ResponseEntity<TarefaResponse> criaTarefa(
-            @AuthenticationPrincipal UsuarioAutenticado usuario,
-            @RequestBody @Valid TarefaRequest tarefaRequest
-            ){
-
-        return ResponseEntity.ok(tarefaService.registroTarefa(usuario, tarefaRequest));
-
-    }*/
-
-
 
 }

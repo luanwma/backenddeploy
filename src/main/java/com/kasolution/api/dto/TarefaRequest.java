@@ -25,7 +25,7 @@ public record TarefaRequest(
        @NotNull(message = "A Prioridade é obrigatório") PrioridadeType prioridade,
 
        @NotNull(message = "Categoria é obrigatória")
-       @Valid // Garante que as validações do CategoriaRequest sejam executadas
+       @Valid
        CategoriaRequest categoria,
 
        Set<String> etiquetas

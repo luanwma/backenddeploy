@@ -24,20 +24,5 @@ public interface HistoricoRepository extends JpaRepository<HistoricoTarefa, UUID
     @Query(value = "select * from historico_tarefas where tarefa_id = :tarefaId", nativeQuery = true)
     List<HistoricoTarefa> findByTarefaIdNative(@Param("tarefaId") UUID tarefaId);
 
-   /* @Query("SELECT ht FROM HistoricoTarefa ht WHERE ht.executor.id =:executorId and ht.tarefa.id =:tarefaId")
-    Optional<List<HistoricoTarefa>> findHistoricoByExecutorIdAndTarefaId(
-            @Param("executorId") UUID executorId,
-            @Param("tarefaId") UUID tarefaId
-    );*/
 
-  /*  @Query("SELECT ht FROM HistoricoTarefa ht WHERE ht.gerente.id =:gerenteId")
-    Optional<List<HistoricoTarefa>> findHistoricoByGerenteId(
-            @Param("gerenteId") UUID gerenteId
-    );*/
-
-/*
-    @Query("SELECT ht FROM HistoricoTarefa ht WHERE ht.gerente.id =:gerenteId AND atrasada = true")
-    Optional<List<HistoricoTarefa>> findHistoricoByGerenteIdAtrasadas(
-            @Param("gerenteId") UUID gerenteId
-    );*/
 }

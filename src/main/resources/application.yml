@@ -33,3 +33,8 @@ springdoc:
     path: /swagger-ui.html
   api-docs:
     path: /v3/api-docs
+
+
+server:
+  port: ${PORT:8080}
+  address: 0.0.0.0

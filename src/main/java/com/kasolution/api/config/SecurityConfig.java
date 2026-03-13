@@ -76,11 +76,10 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        // Coloque aqui a URL exata do seu frontend (ex: Vite usa 5173, Create React App usa 3000)
-        // Adicione a URL exata gerada pela Vercel (sem a barra / no final)
+
         configuration.setAllowedOrigins(List.of(
-                "http://localhost:5173",           // Para desenvolvimento local (Vite)
-                "http://localhost:3000",           // Para desenvolvimento local (CRA)
+                //"http://localhost:5173",           // Para desenvolvimento local (Vite)
+                //"http://localhost:3000",           // Para desenvolvimento local (CRA)
                 "https://techrevolution-frontend.vercel.app"     
         ));
         // Métodos HTTP que a API vai aceitar

@@ -78,9 +78,10 @@ public class SecurityConfig {
 
 
         configuration.setAllowedOrigins(List.of(
-                //"http://localhost:5173",           // Para desenvolvimento local (Vite)
+                "http://localhost:5173",           // Para desenvolvimento local (Vite)
                 //"http://localhost:3000",           // Para desenvolvimento local (CRA)
-                "https://techrevolution-frontend.vercel.app"     
+                "https://techrevolution-frontend.vercel.app"  ,
+                "https://frontend-kasolution.vercel.app"
         ));
         // Métodos HTTP que a API vai aceitar
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
